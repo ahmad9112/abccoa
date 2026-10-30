@@ -51,13 +51,28 @@
   .home-slider{position:relative;overflow:hidden;border-radius:22px;background:#f5f6f8;box-shadow:0 18px 48px rgba(23,38,64,.16);min-height:0;isolation:isolate}
   .home-slide,.home-slide.active{display:none;min-height:0;padding:0;grid-template-columns:1fr;gap:0;animation:bannerFade .65s ease}
   .home-slide.active{display:block}
-  .home-slide img{display:block;width:100%;height:clamp(300px,52vw,590px);object-fit:contain;object-position:center;background:#f5f6f8}
+  .home-slide img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    object-fit: contain;
+    object-position: center;
+    margin: 0;
+}
   @keyframes bannerFade{from{opacity:.35}to{opacity:1}}
   .slide-controls{left:50%;transform:translateX(-50%);bottom:13px;padding:8px 12px;border-radius:30px;background:rgba(15,26,45,.78);backdrop-filter:blur(8px);gap:8px}
   .slide-dot{width:8px;height:8px;background:#ffffff90}
   .slide-dot.active{width:23px;background:#ffda68}
   .slide-arrow{width:32px;height:32px;background:#ffffff20}
   @media(max-width:760px){.hero{padding:14px 0 25px}.home-slide,.home-slide.active{display:none;padding:0;min-height:0}.home-slide.active{display:block}.home-slide img{height:clamp(260px,76vw,440px);object-fit:contain}.slide-controls{bottom:9px;padding:6px 9px;gap:6px}.slide-dot{width:7px;height:7px}.slide-dot.active{width:18px}.slide-arrow{width:28px;height:28px;font-size:16px}}
+  /* Completely hide slider navigation */
+.slide-controls,
+.slide-dot,
+.slide-arrow {
+    display: none !important;
+    visibility: hidden !important;
+}
   </style>
 </head>
 <body>
